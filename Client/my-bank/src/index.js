@@ -10,7 +10,7 @@ import Accountapprovehome from './Components/Admin/Accountapprovehome'
 import Accountapprove from './Components/Admin/Accountapprove';
 
 import reportWebVitals from './reportWebVitals';
-import Login from "./components/Login/Login";
+// import Login from "./components/Login/Login";
 import UserHome from './Components/User/UserHome';
 import User from './Components/User/User'
 import Loan from './Components/User/Loan';
@@ -29,10 +29,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
 
-    children: [
-      {path: "login", element: <Login/>},
-     
-    ]
+   
   },
   {
     path: "/admin",
