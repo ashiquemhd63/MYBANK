@@ -70,7 +70,7 @@ function User() {
 
             <div>
 
-              <Link to="/userDashboard/deposite">
+              <Link to="/money/deposit">
 
                 <button type="submit" className="adminBtn">Deposite</button>
 
@@ -82,7 +82,7 @@ function User() {
 
             <div>
 
-              <Link to="/userDashboard/withdraw">
+              <Link to="/money/withdraw">
 
                 <button type="submit" className="adminBtn">Withdraw</button>
 
