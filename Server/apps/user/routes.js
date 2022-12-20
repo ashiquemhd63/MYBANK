@@ -12,12 +12,16 @@ const Deposit = require('./Controllers/DepositWithdrawController');
 const router = express.Router();
 
 
-router.get('/userProfile/:id',user.userProfile);
+router.get('/update',user.userProfile);
 
-router.post('/userprofile/:id',user.editUserProfile);
+
+router.post('/update',user.editUserProfile);
 
 
 router.get('/transaction/:id',Deposit.getAll);
+
+router.get('/deposit',Deposit.getAccountData);
+router.get('/withdraw',Deposit.getAccountData);
 
 router.post('/deposit',Deposit.deposit_funds);
 router.post('/withdraw',Deposit.withdrawal_funds);

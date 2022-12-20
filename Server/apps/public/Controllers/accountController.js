@@ -62,7 +62,8 @@ module.exports.login = async (req, res) => {
                 id: bankData.id,
                 role: bankData.role
             });
-            // console.log(token)
+            console.log(token)
+            return res.json(new ResponseModel(token));
         }
 
     }
@@ -73,7 +74,8 @@ module.exports.login = async (req, res) => {
         });
 
         console.log(token)
-        res.json(new ResponseModel(userData))
+        // res.json(new ResponseModel(userData))
+        return res.json(new ResponseModel(token));
     }
 
 

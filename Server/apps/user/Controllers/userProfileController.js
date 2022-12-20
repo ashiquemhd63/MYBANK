@@ -1,18 +1,19 @@
 const {User} = require('../../../data/models');
+const ResponseModel = require('../../../utilities/responseModel');
 
 // Get user profile details 
 /**
  * user id is passed as parameter, we have to change it when the login functionality is completed
  */
 module.exports.userProfile = async(req,res) => {
-    const userId = req.params.id;
+    const userId =2
     try {
         const user = await User.findByPk(userId);
-        res.json(user)
+        res.json(new ResponseModel(user));
     }
     catch(err)
     {
-        res.json(err)
+            res.json(new ResponseModel(err));
     }
     
 }
@@ -32,15 +33,17 @@ module.exports.editUserProfile =  (req,res,next) =>
         },
         {
             where : {
-                id : req.params.id
+                id : 2
             }
-        }).then(
-            res.send("ok")
-            );
+        }).then(data=>{
+    res.json(new ResponseModel(data));
+}
+            
+);
     }
     catch(err)
     {
-        res.json(err)
+            res.json(new ResponseModel(err));
     }
     
 }

@@ -1,3 +1,4 @@
+
 .home{
     background-image:url('https://images.pexels.com/photos/5686112/pexels-photo-5686112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-size:cover;
@@ -32,7 +33,7 @@
 }
 .homeButton{
     background-color: rgb(88, 220, 88);
-    color: white;
+    color: rgb(255, 255, 255);
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 60px;
@@ -49,9 +50,46 @@
 .loginButton{
 background-color: rgb(69, 209, 69);
 font-weight: bolder;
-color: white;
+color: rgb(255, 255, 255);
 }
 .regLink{
     color: white;
     font-weight: bolder;
+}
+.home2{
+    background-color: rgb(211, 210, 210);
+    
+    height: 500px;
+    color: black;
+}
+.home2 .layer {
+    background-color: rgba(0, 0, 0, 0.185);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.home2 .image{
+    background-image: url('https://images.pexels.com/photos/6266275/pexels-photo-6266275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+   position:absolute;
+   margin-top: 100px;
+    margin-left: 650px;
+    background-color: rgb(224, 219, 219);
+
+}
+.home2 .text{
+   margin-top: 200px;
+    color: black;
+    margin-left: 200px;
+    position: absolute;
+}
+.home2 .btn{
+    background-color: rgb(69, 209, 69);
+    color: white;
+    font-weight: bolder;
+    margin-top: 10px;
 }
