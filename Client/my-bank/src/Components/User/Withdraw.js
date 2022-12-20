@@ -5,7 +5,6 @@ import "./WithdrawDeposit.css"
 import { getAccountData } from '../../UserServices/withdrawDepositService'
 import { postWithdrawAccountData } from '../../UserServices/withdrawDepositService'
 
-// import { Link } from "react-router-dom";
 function Withdraw() {
     
     const [amount, setAmount] = useState('');
@@ -23,10 +22,6 @@ function Withdraw() {
           amount: amount,
           
         });}
-
-   
-    
-
     
     return (
         <>

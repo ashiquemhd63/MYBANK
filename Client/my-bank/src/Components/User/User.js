@@ -1,16 +1,8 @@
 import {React, useState, useEffect} from 'react'
-
 import { Outlet, Link } from "react-router-dom";
-
 import { userProfile } from "../../UserServices/userServices";
-
 import './User.css'
-
-
-
 import { Button } from "bootstrap";
-
-
 
 function User() {
 
@@ -53,63 +45,34 @@ function User() {
 
                 <li className="list-group-item">Aadhaar Number : {User.aadhaarNumber}</li>
 
-
-
               </ul>
-
             </div>
-
-
-
-
           </div>
 
-
-
           <div className="sub-body">
-
             <div>
-
               <Link to="/money/deposit">
 
                 <button type="submit" className="adminBtn">Deposite</button>
 
               </Link>
-
-
-
             </div>
 
             <div>
-
               <Link to="/money/withdraw">
 
                 <button type="submit" className="adminBtn">Withdraw</button>
 
               </Link>
-
-
-
             </div>
-
-
-
             <div>
-
               <Link to="/userDashboard/loan">
 
                 <button type="submit" className="adminBtn">Apply for loan</button>
 
               </Link>
-
-
-
-            </div>
-
-
-
           </div>
-
+          </div>
         </div>
 
       </div>
@@ -119,9 +82,6 @@ function User() {
     </div>
 
   );
-
 }
-
-
 
 export default User;

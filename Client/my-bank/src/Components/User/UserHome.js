@@ -2,8 +2,6 @@ import { Outlet, useNavigate } from "react-router-dom";
 import UserNavbar from "./UserNavbar";
 import {useEffect} from "react"
 
-
-
 function UserHome() {
   const navigate = useNavigate();
 
@@ -20,14 +18,9 @@ function UserHome() {
         <UserNavbar></UserNavbar>
       </header>
 
-
       <main>
         <Outlet></Outlet>
-
       </main>
-
-
-
 
     </>
   );

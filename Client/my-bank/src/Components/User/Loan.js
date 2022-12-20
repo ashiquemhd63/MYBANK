@@ -3,8 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 import './LoanDetails.css'
 
 function Loan() {
-   
-    
+      
     return (
         <div className='loan'>
             <div className="container-fluid row ">
