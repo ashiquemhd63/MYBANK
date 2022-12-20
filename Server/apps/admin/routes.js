@@ -6,5 +6,9 @@ router.post('/approvalStatus/:id',admin.userApproval);
 router.post('/loanApprovalStatus/:userId',admin.loanApproval);
 router.get('/update',admin.adminProfile);
 router.post('/update',admin.adminProfileUpdate);
-
+router.get('/adminProfile',admin.adminProfile);
+router.get('/loanApprovalList', admin.loanApprovalList);
+router.get('/accountApproveList', admin.userApprovalList);
+router.post('/loanApprove/:loanId', admin.loanApproval);
+router.post('/accountApproval/:id',admin.userApproval);
 module.exports = router;
