@@ -15,7 +15,9 @@ module.exports.getAll = async (req, res) => {
 
 //To  deposite amount in account and also  available in tranasaction
 module.exports.deposit_funds = async (req, res) => {
-    const userId = 2;//should take it from token as req.user.id
+    const userId = req.user.id
+    // const userId = 2
+    console.log(req.user)
     const accountData = await Account.findOne({
         where: { userId: userId }
     })

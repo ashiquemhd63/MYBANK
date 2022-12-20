@@ -47,6 +47,7 @@ function authMiddleware(req, res, next){
     try{
         token = token.split(' ')[1];
         const decodedToken = tokenHandler.verifyToken(token);
+        req.user=decodedToken
         console.log(decodedToken);
         return next();
     }

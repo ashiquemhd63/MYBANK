@@ -217,49 +217,54 @@ references:{
 });
 
 
-// const Statement = sequelize.define('Statement', {
-//     transactionId : {
-//         type : DataTypes.BIGINT,
-//         autoIncrement : true,
-        
+const LoanTypes = sequelize.define('loantype', {
 
-//     } ,
-//     date : {
-//         type : DataTypes.DATE,
+    loanTypeId : {
 
-        
-//     },
-//     accountId : {
-//         type : BIGINT,
-        
-//     },
-//     userId : {
-//         type : BIGINT
-//     },
-    
-//     amount:{
-//         type : DataTypes.BIGINT
-//     },
-//     transactionType: {
-//         type : DataTypes.STRING(50)
-//     },
-//     userId:{
-//         type:DataTypes.INTEGER,
-//         onDelete:"cascade",
-// references:{
-//     model:'User',
-//     key:'id'
-// }
+        type : DataTypes.INTEGER,
 
-//     }
+        autoIncrement : true,
+
+        primaryKey : true
 
 
+
+    } ,
+
+    loanName : {
+
+        type : DataTypes.STRING(50),
+
+        unique: true
+
+       
+
+    },
+
+    interest : {
+
+        type  :DataTypes.INTEGER
+
+    }
+
+   
+
+   
+
+
+
+   
+
+});
 
 
 module.exports.User = User;
 module.exports.Account = Account;
 module.exports.Transaction = Transaction;
 module.exports.Loan = Loan;
+
+module.exports.Loantypes = LoanTypes;
+
 
 module.exports.Bank = Bank;
 

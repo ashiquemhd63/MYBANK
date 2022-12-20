@@ -5,7 +5,9 @@ const user = require('./Controllers/userProfileController');
 
 const userController = require('./Controllers/userController');
 const Deposit = require('./Controllers/DepositWithdrawController');
+const userProfileController = require('./Controllers/userProfileController');
 
+const Loan = require('./Controllers/loanController');
 
 
 
@@ -16,6 +18,8 @@ router.get('/update',user.userProfile);
 
 
 router.post('/update',user.editUserProfile);
+router.get('/', userProfileController.userProfile)
+router.post('/applyLoan',Loan.ApplyLoan)
 
 
 router.get('/transaction/:id',Deposit.getAll);
