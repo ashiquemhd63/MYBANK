@@ -17,18 +17,14 @@ function HomeLoan() {
     const navigate = useNavigate();
 
     const [hasSaved, setHasSaved] = useState(false);
-
     const [amount, setAmount] = useState('');
-
     const [time, setTime] = useState('');
-
-
+    const [returnPay, setReturnPay] = useState(0);
+    
 
     async function applyLoan(e) {
 
         e.preventDefault();
-
-       
 
         const data = await saveLoan({
 
@@ -41,12 +37,7 @@ function HomeLoan() {
         });
 
         setHasSaved(true);
-
-
-
     }
-
-   
 
     return (
 
@@ -111,6 +102,20 @@ function HomeLoan() {
 
 
                         </Form.Control>
+
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+
+                        <Form.Label>You have to return
+
+
+
+                        </Form.Label>
+
+                        <Form.Control type="text" placeholder="You have to return" onChange={(e) => setAmount(e.target.value)} />
+
+
 
                     </Form.Group>
 
