@@ -18,10 +18,11 @@ module.exports.deposit_funds = async (req, res) => {
     const userId = req.user.id
     // const userId = 2
     console.log(req.user)
+ 
     const accountData = await Account.findOne({
         where: { userId: userId }
     })
-    
+    console.log(accountData)
     await Transaction.create({
         accountId: accountData.accountId,
         userId: userId,
@@ -48,7 +49,7 @@ module.exports.deposit_funds = async (req, res) => {
 
 
 module.exports.withdrawal_funds = async (req, res) => {
-    const userId = 2;//should take it from token as req.user.id
+    const userId = req.user.id;//should take it from token as req.user.id
 
     const accountData = await Account.findOne({
         where: { userId: userId }
@@ -88,7 +89,7 @@ module.exports.withdrawal_funds = async (req, res) => {
 
 module.exports.getAccountData = async (req, res) => {
 
-    const id = 2
+    const id = req.user.id
     console.log(id)
     const Accounts = await Account.findOne({
         where: { userId: id }
