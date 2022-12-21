@@ -23,7 +23,10 @@ function Deposit() {
         var res = await postDepositAccountData({
           amount: amount,
           
-        });}
+        })
+        if(res.success){
+            window.location.href='/userDashboard'
+        };}
 
    
     
