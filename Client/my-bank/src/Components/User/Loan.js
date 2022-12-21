@@ -18,7 +18,7 @@ function Loan() {
                     <Link to="/userDashboard/loan/homeLoan">
 
                     <div>
-                        <button type="submit" className="adminBtn">Gold loan</button>
+                        <button type="submit" className="adminBtn">Home Loan</button>
                     </div>
                     </Link>
                     <Link to="/userDashboard/loan/goldLoan">

@@ -126,7 +126,7 @@ module.exports.adminProfileUpdate = async (req, res) => {
         },
             {
                 where: {
-                    id: 1
+                    id: req.user.id
                 }
             }).then(data => {
                 res.json(new ResponseModel(data));

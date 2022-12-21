@@ -1,9 +1,9 @@
-
 .home{
     background-image:url('https://images.pexels.com/photos/5686112/pexels-photo-5686112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-size:cover;
     height: 609px;
     position: relative;
+
 }
 
 .navbar-brand{
@@ -57,7 +57,7 @@ color: rgb(255, 255, 255);
     font-weight: bolder;
 }
 .home2{
-    background-color: rgb(211, 210, 210);
+    background-color: rgb(223, 221, 221);
     
     height: 500px;
     color: black;
@@ -92,4 +92,51 @@ color: rgb(255, 255, 255);
     color: white;
     font-weight: bolder;
     margin-top: 10px;
+}
+.home3{
+    background-color: rgb(255, 255, 255);
+    
+    height: 500px;
+    color: black;
+
+}
+.home3 .row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+    
+    
+    
+}
+.home3 .card-header{
+    color: white;
+    font-weight: bolder;
+    
+    background-color: rgb(69, 209, 69);
+}
+.home3 .head{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    
+}
+.home4{
+    background-color:rgb(223, 221, 221);
+    
+    height: 500px;
+    color: black;
+
+
+}
+.home5{
+    background-color: rgb(51, 50, 50);
+    
+    height: 500px;
+    color: black;
+
+
 }

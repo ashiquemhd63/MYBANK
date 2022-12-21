@@ -32,7 +32,7 @@ function Login() {
                         localStorage.setItem('token', result.data);
                         var decoded = jwt_decode(result.data);
                         switch(decoded.role){
-                            case 'bank':
+                            case 'admin':
                                 window.location.href = '/admin';
                                 // <Navigate to='/admin'/>
                                 break;

@@ -8,7 +8,7 @@ module.exports.ApplyLoan = async (req, res) => {
         amount: req.body.amount,
         loanTypeId : req.body.loantype,
         accountId:1,
-        userId: 1
+        userId: req.user.id
 
 
 
