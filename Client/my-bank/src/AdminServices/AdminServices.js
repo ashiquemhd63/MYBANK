@@ -9,6 +9,8 @@ const userProfile = async () => {
 //get all loan requests
 const loanApprovalList = async () => {
     var response = await axios.get('/admin/loanApprovalList');
+    console.log('responses fro loan aproval list')
+    console.log(response.data)
     return response.data;
 }
 
