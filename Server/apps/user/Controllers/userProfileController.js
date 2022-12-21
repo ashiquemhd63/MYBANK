@@ -1,4 +1,4 @@
-const { User } = require('../../../data/models');
+const { User, Account, sequelize } = require('../../../data/models');
 const ResponseModel = require('../../../utilities/responseModel');
 
 // Get user profile details 
@@ -6,17 +6,33 @@ const ResponseModel = require('../../../utilities/responseModel');
  * user id is passed as parameter, we have to change it when the login functionality is completed
  */
 module.exports.userProfile = async (req, res) => {
-  
-    const userId = req.user.id
-    try {
-        const user = await User.findByPk(userId);
-        res.json(new ResponseModel(user));
-    }
-    catch (err) {
-        res.json(new ResponseModel(err));
-    }
 
+    sequelize.query("select * from users inner join accounts on accounts.userId = users.id and users.id = ?",{
+        replacements : [req.user.id]
+    })
+        .then(user => {
+            
+            user=user.pop()
+           
+            res.json(new ResponseModel(user[0]));
+           
+        });
+
+
+
+//     const userId = req.user.id
+//     try {
+//         const user = await User.findByPk(userId);
+//         res.json(new ResponseModel(user));
+//     }
+//     catch (err) {
+//         res.json(new ResponseModel(err));
+//     }
+
+// }
 }
+
+
 
 // Edit user profile 
 /**

@@ -35,7 +35,7 @@ function User() {
 
               <ul className="list-group list-group-flush ">
 
-                <li className="list-group-item hello">Account Number : 834452444432</li>
+                <li className="list-group-item hello">Account Number : {User.accountNumber}</li>
 
                 <li className="list-group-item">Name : {User.name}</li>
 
@@ -44,6 +44,8 @@ function User() {
                 <li className="list-group-item">Phone : {User.phone}</li>
 
                 <li className="list-group-item">Aadhaar Number : {User.aadhaarNumber}</li>
+
+                <li className="list-group-item">Account Balance : {User.currentBalance}</li>
 
               </ul>
             </div>

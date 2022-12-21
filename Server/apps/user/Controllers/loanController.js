@@ -1,21 +1,35 @@
 const { User, Account, Transaction, Loan } = require('../../../data/models');
+const ResponseModel = require('../../../utilities/responseModel');
+
+
 
 module.exports.ApplyLoan = async (req, res) => {
 
-    console.log(req.body)
-     await Loan.create({ 
+    try {
+        var accountHolder = await Account.findOne({
+
+            where: {
+                userId: req.user.id
+            }
+        })
+
+    } catch (error) {
+        res.json(new ResponseModel(err));
+    }
+    
+    await Loan.create({
 
         amount: req.body.amount,
-        loanTypeId : req.body.loantype,
-        accountId:1,
+        loanTypeId: req.body.loantype,
+        accountId: accountHolder.accountId,
         userId: req.user.id
 
 
 
     })
 
-        .then(data=>{
-       return res.json('success')
+        .then(data => {
+            return res.json('success')
 
         })
 
