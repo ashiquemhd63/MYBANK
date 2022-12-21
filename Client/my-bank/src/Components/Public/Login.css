@@ -1,34 +1,47 @@
-.login{
+.login {
     background-color: rgb(52, 52, 52);
     margin-top: 125px;
-   width: 400px;
-    border-radius:10px ;
+    width: 400px;
+    border-radius: 10px;
     margin-left: 425px;
     padding-top: 20px;
-    padding-bottom: 20px;  
-    
+    padding-bottom: 20px;
+
 }
-.login .form{
- margin-left: 50px;   
+
+.login .form {
+    margin-left: 50px;
 }
-.login .fields{
-    width: 250px; 
-    margin-left:-80px ;
-   }
-   .login .form-control{
+
+.login .fields {
+    width: 250px;
+    margin-left: -80px;
+}
+
+#captcha {
+    width: 250px;
+    margin-left: -80px;
+    height: 100px;
+
+}
+
+.login .form-control {
     background-color: rgb(42, 42, 42);
     border: none;
-   }
-.login .btn{
+}
+
+.login .btn {
     background-color: rgb(58, 205, 58);
     border: none;
     margin-top: 10px;
 }
-.login .text-center{
-margin-left: 35px;
+
+.login .text-center {
+    margin-left: 35px;
 }
-body{
- 
+
+body {
+
     background-color: white;
-   
+
 }
