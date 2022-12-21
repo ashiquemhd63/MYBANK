@@ -139,3 +139,35 @@ module.exports.adminProfileUpdate = async (req, res) => {
     }
 
 }
+
+
+// all Account details admin can see
+module.exports.allAccountDetails = (req, res) => {
+    try {
+        sequelize.query('select * from users inner join accounts on accounts.userId=users.id').then(accountData => {
+            accountData = accountData.pop()
+            res.json(new ResponseModel(accountData));
+        })
+
+    }
+    catch (err) {
+        res.json(err)
+    }
+
+}
+
+//all loan details admin can see
+module.exports.allLoanDetails = (req, res) => {
+    try {
+        // const loanDetails = await Loan.findAll()
+
+        sequelize.query('select * from users inner join loans on loans.userId=users.id').then(loanData => {
+            loanData = loanData.pop()
+            res.json(new ResponseModel(loanData));
+        })
+    }
+    catch (err) {
+        res.json(err)
+    }
+
+}

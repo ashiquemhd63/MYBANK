@@ -11,4 +11,6 @@ router.get('/loanApprovalList', admin.loanApprovalList);
 router.get('/accountApproveList', admin.userApprovalList);
 router.post('/loanApprove/:loanId', admin.loanApproval);
 router.post('/accountApproval/:id',admin.userApproval);
+router.get('/allAccountDetails',admin.allAccountDetails);
+router.get('/allLoanDetails',admin.allLoanDetails);
 module.exports = router;
