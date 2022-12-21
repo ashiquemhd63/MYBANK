@@ -21,7 +21,11 @@ function Withdraw() {
         var res = await postWithdrawAccountData({
           amount: amount,
           
-        });}
+        })
+        if(res.success){
+            window.location.href='/userDashboard'
+        }
+        ;}
     
     return (
         <>
