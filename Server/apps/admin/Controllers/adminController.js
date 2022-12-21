@@ -1,4 +1,5 @@
-const {User,Loan} = require('../../../data/models');
+const {User,Loan,Bank} = require('../../../data/models');
+const ResponseModel = require('../../../utilities/responseModel');
 
 //Admin approval of user
 module.exports.userApproval =  (req,res) =>
@@ -43,3 +44,38 @@ module.exports.loanApproval = (req,res) =>
     }
    
 }
+module.exports.adminProfile = async(req,res) => {
+        const userId =1
+        try {
+            const user = await Bank.findByPk(userId);
+            res.json(new ResponseModel(user));
+        }
+        catch(err)
+        {
+                res.json(new ResponseModel(err));
+        }
+        
+    }
+    module.exports.adminProfileUpdate = async(req,res) => {
+        try{
+                     Bank.update({
+                        phone : req.body.phone,
+                        email : req.body.email,
+                        password : req.body.password
+                    },
+                    {
+                        where : {
+                            id : 1
+                        }
+                    }).then(data=>{
+                res.json(new ResponseModel(data));
+            }
+                        
+            );
+                }
+                catch(err)
+                {
+                        res.json(new ResponseModel(err));
+                }
+                
+        }

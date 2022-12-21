@@ -1,4 +1,5 @@
 const { User, Account, Transaction, Loan } = require('../../../data/models');
+const ResponseModel = require('../../../utilities/responseModel');
 
 //Get specific transaction details
 module.exports.getAll = async (req, res) => {
@@ -14,7 +15,9 @@ module.exports.getAll = async (req, res) => {
 
 //To  deposite amount in account and also  available in tranasaction
 module.exports.deposit_funds = async (req, res) => {
-    const userId = 1;//should take it from token as req.user.id
+    const userId = req.user.id
+    // const userId = 2
+    console.log(req.user)
     const accountData = await Account.findOne({
         where: { userId: userId }
     })
@@ -37,14 +40,15 @@ module.exports.deposit_funds = async (req, res) => {
         }
 
     ).then(data=>{
-        res.send('Deposit amount is successfully')
+        // res.send('Deposit amount is successfully')
+        res.json(new ResponseModel('Deposit amount is successfully'));
     })
 
 }
 
 
 module.exports.withdrawal_funds = async (req, res) => {
-    const userId = 1;//should take it from token as req.user.id
+    const userId = 2;//should take it from token as req.user.id
 
     const accountData = await Account.findOne({
         where: { userId: userId }
@@ -70,16 +74,26 @@ module.exports.withdrawal_funds = async (req, res) => {
             }
     
         ).then(data=>{
-            res.send('withdrawal successfully')
+            res.json(new ResponseModel('Withdrawal is successfully'));
         })
 
     }
     else{
-        res.send('not enough balance')
+        res.json(new ResponseModel('Not enough balance'));
     }
     
     
 
+}
+
+module.exports.getAccountData = async (req, res) => {
+
+    const id = 2
+    console.log(id)
+    const Accounts = await Account.findOne({
+        where: { userId: id }
+    });
+    res.json(new ResponseModel(Accounts));
 }
 
 

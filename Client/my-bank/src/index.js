@@ -18,11 +18,19 @@ import Loan from './Components/User/Loan';
 import PersonalLoan from './Components/User/LoanDetails/PersonalLoan';
 import HomeLoan from './Components/User/LoanDetails/HomeLoan';
 import GoldLoan from './Components/User/LoanDetails/Goldloan';
-
+import AuthLayout from './Components/Public/AuthLayout';
+import Login from './Components/Public/Login';
+import Register from './Components/Public/Register';
+import Withdraw from './Components/User/Withdraw';
+import Deposit from './Components/User/Deposit';
+import UserProfileEdit from './Components/User/UserProfileEdit';
+import AdminProfileEdit from './Components/User/AdminProfileEdit';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
+
 
 const router = createBrowserRouter([
   {
@@ -30,6 +38,30 @@ const router = createBrowserRouter([
     element: <App />,
 
    
+  },
+  {path: "/auth", element: <AuthLayout/> ,children: [
+		{path: "/auth/login", element: <Login/>},
+    {path: "/auth/register", element: <Register/>}
+	]},
+  {
+    path: "/money/withdraw",
+    element: <Withdraw/>
+  
+  },
+  {
+    path: "/money/deposit",
+    element: <Deposit/>
+  
+  },
+  {
+    path: "/user/update",
+    element: <UserProfileEdit/>
+  
+  },
+  {
+    path: "/admin/update",
+    element: <AdminProfileEdit/>
+  
   },
   {
     path: "/admin",

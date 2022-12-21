@@ -1,19 +1,25 @@
-// const { User, Account, Transaction, Loan } = require('../../../data/models');
+const { User, Account, Transaction, Loan } = require('../../../data/models');
 
-// module.exports.ApplyLoan = async (req, res) => {
+module.exports.ApplyLoan = async (req, res) => {
 
-//      await Loan.create({
+    console.log(req.body)
+     await Loan.create({ 
 
-//         amount: req.body.amount,
-//         interest: req.body.interest,
-//         startDate: req.body.startDate,
-//         endDate: req.body.endDate,
-//         userId: req.body.userId
+        amount: req.body.amount,
+        loanTypeId : req.body.loantype,
+        accountId:1,
+        userId: 1
 
-//     })
-//         .then(data=>{
-//             res.send('Apply successfully')
-//         })
 
-// }
+
+    })
+
+        .then(data=>{
+       return res.json('success')
+
+        })
+
+
+
+}
 

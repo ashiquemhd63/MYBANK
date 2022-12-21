@@ -4,33 +4,6 @@ const tokenHandler = require('../../../utilities/tokenHandler')
 
 
 
-
-// const Bank = require('../../../data/models')
-
-//User login 
-
-// module.exports.login = async (req, res, next) => {
-//     const { email, password } = req.body;
-//     console.log(req.body)
-//     const userData = await User.findOne(
-//         {
-//             where: {
-//                 email: email,
-//                 password: password
-//             }
-//         }
-//     )
-
-//     if (userData != null) {
-//         const token = tokenHandler.createToken({
-//             id: 1
-//             // role: bankData.role
-//         });
-//     }
-//     res.json(new ResponseModel(userData))
-
-// };
-
 module.exports.login = async (req, res) => {
     const { email, password } = req.body;
     console.log(req.body)
@@ -62,7 +35,8 @@ module.exports.login = async (req, res) => {
                 id: bankData.id,
                 role: bankData.role
             });
-            // console.log(token)
+            console.log(token)
+            return res.json(new ResponseModel(token));
         }
 
     }
@@ -73,7 +47,8 @@ module.exports.login = async (req, res) => {
         });
 
         console.log(token)
-        res.json(new ResponseModel(userData))
+        // res.json(new ResponseModel(userData))
+        return res.json(new ResponseModel(token));
     }
 
 

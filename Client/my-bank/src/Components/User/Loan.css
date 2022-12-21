@@ -3,17 +3,7 @@ body {
     background-color: #141D2B;
     color : white
 }
- /* .right-div {
-    background-color: rgba(164, 177, 205,0.4);
-    width: 69rem;
-    border-radius: 18px;
-    margin-top: 40px;
-    height: 190px;
-} */
-    /* .loansDiv{
-        background-color: #9FEF00;
-    } */
- 
+
  .loansDiv
 {
     display: flex;

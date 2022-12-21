@@ -1,6 +1,7 @@
 
 
 import "bootstrap/dist/css/bootstrap.css";
+
 import Home from "./Components/Public/Home";
 
 
@@ -15,7 +16,7 @@ function App() {
     <div className="App" >
       
       <Home></Home>
-      {/* <Outlet></Outlet> */}
+      <Outlet></Outlet>
 
     </div>
   );
