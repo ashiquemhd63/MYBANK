@@ -11,13 +11,13 @@ import {allLoanDetails} from "../../AdminServices/AdminServices";
 
 function Loandetails() {
 
-    const [User, userProfile] = useState([]);
+    const [User, setUser] = useState([]);
 
     useEffect(() => {
 
         allLoanDetails().then((data) => {
 
-            userProfile(data.data)
+            setUser(data.data)
 
         })
 
