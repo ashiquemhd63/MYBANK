@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 
 function Loanapprove() {
 
-    const [Loan, loanProfile] = useState([]);
+    const [Loan, setLoan] = useState([]);
     
     useEffect(() => {
         loanApprovalList().then((data) => {
-            loanProfile(data)
+            setLoan(data)
         })
     }, []);
 

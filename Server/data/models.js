@@ -5,7 +5,7 @@ const sequelize = new Sequelize({
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
-    password: 'root',
+    password: '308568',
     database: 'mybank'
 });
 
@@ -195,9 +195,7 @@ const Loan = sequelize.define('Loan', {
         type : DataTypes.BIGINT,
         allowNull : false
     },
-    interest : {
-        type : DataTypes.BIGINT
-    },
+   
     startDate:{
         type : DataTypes.DATEONLY
     },

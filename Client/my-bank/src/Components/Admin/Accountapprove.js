@@ -7,11 +7,11 @@ import { accountApproveList,accountApprove } from "../../AdminServices/AdminServ
 
 function Accountapprove() {
 
-    const [User, userProfile] = useState([]);
+    const [User, setUser] = useState([]);
 
     useEffect(() => {
         accountApproveList().then((data) => {
-            userProfile(data)
+            UserProfile(data)
 
         })
     }, []);
