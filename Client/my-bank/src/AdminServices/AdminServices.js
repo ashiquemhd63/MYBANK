@@ -37,13 +37,13 @@ const accountApprove = (id, e) => {
 
 //view all account details
 const allAccountDetails = async  ()=>{
-    var response = await axios.get('/admin/allAccountDeatails');
+    var response = await axios.get('/admin/allAccountDetails');
     return response.data;
 }
 
 //view all loan details
 const allLoanDetails = async () => {
-    var response = await axios.get('/admin/allLoanDeatails');
+    var response = await axios.get('/admin/allLoanDetails');
     return response.data;
 }
 
