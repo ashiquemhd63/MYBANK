@@ -34,7 +34,7 @@ function Accountapprove() {
     }
 // deleting the row after admin approving the request
     function approve(userId, e){
-        if(!confirm('Are you sure you want to approve this account?')){
+        if(!window.confirm('Are you sure you want to approve this account?')){
             return;
         }
         accountApprove(userId, e);
