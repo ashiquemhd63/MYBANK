@@ -11,7 +11,7 @@ function Accountapprove() {
 
     useEffect(() => {
         accountApproveList().then((data) => {
-            UserProfile(data)
+            setUser(data)
 
         })
     }, []);
