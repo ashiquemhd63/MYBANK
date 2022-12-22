@@ -46,17 +46,17 @@ function AdminProfileEdit() {
                         <Form className='form'>
                             <div className='fields'>
                                 <label>Email</label>
-                                <Field type="email" name="email"  className='form-control'/>
+                                <Field type="email" name="email" value={profile.email} className='form-control'/>
                                 <ErrorMessage name="email" component="div" className='text-danger'/>
                             </div>
                             <div className='fields'>
                                 <label>Phone</label>
-                                <Field type="text" name="phone"  className='form-control'/>
+                                <Field type="text" name="phone" value={profile.phone}  className='form-control'/>
                                 <ErrorMessage name="phone" component="div" className='text-danger'/>
                             </div>
                             <div className='fields'>
                                 <label>Password</label>
-                                <Field type="password" name="password" className='form-control'/>
+                                <Field type="password" name="password" value={profile.password} className='form-control'/>
                                 <ErrorMessage name="password" component="div" className='text-danger'/>
                             </div>
                           
