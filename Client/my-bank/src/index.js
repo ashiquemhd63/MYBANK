@@ -25,6 +25,7 @@ import Withdraw from './Components/User/Withdraw';
 import Deposit from './Components/User/Deposit';
 import UserProfileEdit from './Components/User/UserProfileEdit';
 import AdminProfileEdit from './Components/User/AdminProfileEdit';
+import Otp from './Components/Public/Otp';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -41,7 +42,8 @@ const router = createBrowserRouter([
   },
   {path: "/auth", element: <AuthLayout/> ,children: [
 		{path: "/auth/login", element: <Login/>},
-    {path: "/auth/register", element: <Register/>}
+    {path: "/auth/register", element: <Register/>},
+    {path: "/auth/otp", element: <Otp/>}
 	]},
   {
     path: "/money/withdraw",

@@ -33,7 +33,7 @@ const ResponseModel = require('../utilities/responseModel');
 const tokenHandler = require('../utilities/tokenHandler');
 
 function authMiddleware(req, res, next){
-    if(req.url=='/auth/login' || req.url=='/' || req.url=='/auth/register'){
+    if(req.url.startsWith('/auth') || req.url=='/'){
         return next();
     }
     // Fetch the token.

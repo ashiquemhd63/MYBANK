@@ -5,7 +5,7 @@ const sequelize = new Sequelize({
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
-    password: '308568',
+    password: 'root',
     database: 'mybank'
 });
 
@@ -62,6 +62,10 @@ const User = sequelize.define('User', {
     approvalStatus : {
         type : DataTypes.STRING(30),
         defaultValue : 'pending'
+    },
+    otp:{
+        type:DataTypes.STRING(30),
+        allowNull:true
     }
 });
 

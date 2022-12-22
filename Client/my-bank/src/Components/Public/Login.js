@@ -2,6 +2,7 @@ import React from 'react';
 import {Formik, Form, Field, ErrorMessage} from "formik";
 import * as yup from "yup";
 import AuthService from "../../PublicServices/authService";
+import OtpService from "../../PublicServices/otpService";
 import jwt_decode from "jwt-decode";
 import {Na, Navigate} from "react-router-dom";
 import "./Login.css"
@@ -27,23 +28,31 @@ function Login() {
                             alert(result.errors[0]);
                             return;
                         }
+                        if(result.success){
+                            localStorage.setItem('userid', result.data);
+                        if(result.data){
+                            window.location.href='/auth/otp'
+                        }
+                        
+                        }
+                       
 
                         // alert('Login success');
-                        localStorage.setItem('token', result.data);
-                        var decoded = jwt_decode(result.data);
-                        switch(decoded.role){
-                            case 'admin':
-                                window.location.href = '/admin';
-                                // <Navigate to='/admin'/>
-                                break;
-                            case 'user':
-                                window.location.href = '/userDashboard';
-                                // <Navigate to='/admin'/>
-                                break;
-                            default:
-                                window.location.href = '/';
-                                break;
-                        }
+                        // localStorage.setItem('token', result.data);
+                        // var decoded = jwt_decode(result.data);
+                        // switch(decoded.role){
+                        //     case 'admin':
+                        //         window.location.href = '/admin';
+                        //         // <Navigate to='/admin'/>
+                        //         break;
+                        //     case 'user':
+                        //         window.location.href = '/userDashboard';
+                        //         // <Navigate to='/admin'/>
+                        //         break;
+                        //     default:
+                        //         window.location.href = '/';
+                        //         break;
+                        // }
                     }}
                     >
                     {({ isSubmitting }) => (

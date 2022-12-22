@@ -2,6 +2,8 @@ const { User, Bank } = require('../../../data/models')
 const ResponseModel = require('../../../utilities/responseModel');
 const tokenHandler = require('../../../utilities/tokenHandler')
 
+const nodemailer=require('nodemailer');
+
 
 
 // module.exports.login = async (req, res) => {
@@ -67,19 +69,58 @@ module.exports.login = async (req, res) => {
 
     }
     else if (userData.approvalStatus == 'pending') {
-        console.log('sjdhfvujhsdbfg')
+    
         res.json(new ResponseModel(null, null, ['Waiting for approval']))
     }
     else {
 
-        const token = tokenHandler.createToken({
-            id: userData.id,
-            role: userData.role
+        var otp = Math.random();
+         otp = otp * 1000000;
+       otp = parseInt(otp);
+       console.log(otp);
+
+        
+
+
+        User.update({
+            otp:otp
+        },
+        {
+            where:{
+                email:userData.email,
+                password:userData.password
+            }
+        })
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
+            service : 'Gmail',
+            
+            auth: {
+              user: 'lingeswaranlinga842@gmail.com',
+              pass: 'lephfdrvseilelwv',
+            }
+            
         });
 
-        console.log(token)
-        // res.json(new ResponseModel(userData))
-        return res.json(new ResponseModel(token));
+        var mailOptions = {
+            from: 'lingeswaranlinga842@gmail.com',
+            to: req.body.email,
+            subject: 'Sending Email using Node.js',
+            text: String(otp)
+          };
+
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
+
+       
+        return res.json(new ResponseModel(userData.id));
 
     }
 
@@ -90,6 +131,29 @@ module.exports.login = async (req, res) => {
 
 // }
 //User registration 
+module.exports.otp = async (req, res) => {
+    console.log(req.params.id)
+    console.log(req.body.otp)
+   const data=await User.findOne({where: {id: req.params.id,otp:req.body.otp}})
+    if(data==null)
+    {
+        return res.json(new ResponseModel(null, null, ['Wrong otp']));
+    }
+    else{
+        const token =  tokenHandler.createToken({
+                        id: data.id,
+                        role: data.role
+                    });
+            
+                    console.log(token)
+                   
+                    return res.json(new ResponseModel(token));
+
+      
+    }
+
+    
+}
 
 module.exports.register = async (req, res) => {
     try {
