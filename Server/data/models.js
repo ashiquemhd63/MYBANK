@@ -5,7 +5,7 @@ const sequelize = new Sequelize({
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
-    password: '308568',
+    password: 'root',
     database: 'mybank'
 });
 
@@ -62,6 +62,10 @@ const User = sequelize.define('User', {
     approvalStatus : {
         type : DataTypes.STRING(30),
         defaultValue : 'pending'
+    },
+    otp:{
+        type:DataTypes.STRING(30),
+        allowNull:true
     }
 });
 
@@ -191,7 +195,9 @@ const Loan = sequelize.define('Loan', {
         type : DataTypes.BIGINT,
         allowNull : false
     },
-   
+    interest : {
+        type : DataTypes.BIGINT
+    },
     startDate:{
         type : DataTypes.DATEONLY
     },
@@ -255,7 +261,7 @@ const LoanTypes = sequelize.define('loantype', {
 
 });
 
-module.exports.sequelize = sequelize;
+
 module.exports.User = User;
 module.exports.Account = Account;
 module.exports.Transaction = Transaction;
@@ -263,7 +269,7 @@ module.exports.Loan = Loan;
 
 module.exports.Loantypes = LoanTypes;
 
-
+module.exports.sequelize = sequelize;
 module.exports.Bank = Bank;
 
 

@@ -8,6 +8,13 @@ import Loanapprovehome from './Components/Admin/Loanapprovehome';
 import Loanapprove from './Components/Admin/LoanApprove';
 import Accountapprovehome from './Components/Admin/Accountapprovehome'
 import Accountapprove from './Components/Admin/Accountapprove';
+import Accountdetailshome from './Components/Admin/Accountdetailshome';       
+import Accountdetails from './Components/Admin/Accountdetails';
+import Loandetails from './Components/Admin/Loandetails';
+import Otp from './Components/Public/Otp';
+
+
+
 
 import reportWebVitals from './reportWebVitals';
 // import Login from "./components/Login/Login";
@@ -41,7 +48,8 @@ const router = createBrowserRouter([
   },
   {path: "/auth", element: <AuthLayout/> ,children: [
 		{path: "/auth/login", element: <Login/>},
-    {path: "/auth/register", element: <Register/>}
+    {path: "/auth/register", element: <Register/>},
+    {path: "/auth/otp", element: <Otp/>}
 	]},
   {
     path: "/money/withdraw",
@@ -81,9 +89,20 @@ const router = createBrowserRouter([
     element : <Accountapprovehome/>,children:[
       {path: '/admin/accountApprove',element: <Accountapprove/>}
     ]
-
-
   },
+  {
+    path: "/admin/allAccountDetails",
+    element : <Accountdetailshome/>,children:[
+      {path: '/admin/allAccountDetails',element: <Accountdetails/>}
+    ]
+  },
+  {
+    path: "/admin/allLoanDetails",
+    element : <Accountdetailshome/>,children:[
+      {path: '/admin/allLoanDetails',element: <Loandetails/>}
+    ]
+  },
+  
   {
     path: "/userDashboard",
     element: <UserHome/>, children:[{
