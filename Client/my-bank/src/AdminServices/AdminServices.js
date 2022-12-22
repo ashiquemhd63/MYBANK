@@ -21,6 +21,11 @@ const loanApprove = (loanId, e) => {
     
 
 }
+//reject loan
+const loanReject = (loanId, e) => {
+    e.preventDefault()
+    axios.post('/admin/loanReject/' + loanId)
+}
 
 //get all account approve requests
 const accountApproveList = async () => {
@@ -47,4 +52,4 @@ const allLoanDetails = async () => {
     return response.data;
 }
 
-export { userProfile, loanApprovalList, loanApprove, accountApproveList, accountApprove, allAccountDetails, allLoanDetails };
+export { userProfile, loanApprovalList, loanApprove, accountApproveList, accountApprove, allAccountDetails, allLoanDetails, loanReject };
