@@ -12,7 +12,7 @@ function Otp() {
     <div className='container-fluid'>
         <div className='row'>
             <div className='col-md-3 offset-sm-3'>
-                <h1 className='text-center'>Otp</h1>
+                <h1 className='text-center'>OTP</h1>
                 <Formik
                     initialValues={{ otp:''}}
                     validationSchema={yup.object({
@@ -44,28 +44,12 @@ if(result.success) {
 else{
     alert('Wrong otp')
 }
-                        // alert('Login success');
-                    //     localStorage.setItem('token', result.data);
-                    //     var decoded = jwt_decode(result.data);
-                    //     switch(decoded.role){
-                    //         case 'admin':
-                    //             window.location.href = '/admin';
-                    //             // <Navigate to='/admin'/>
-                    //             break;
-                    //         case 'user':
-                    //             window.location.href = '/userDashboard';
-                    //             // <Navigate to='/admin'/>
-                    //             break;
-                    //         default:
-                    //             window.location.href = '/';
-                    //             break;
-                    //     }
                     }}
                     >
                     {({ isSubmitting }) => (
                         <Form className='form'>
                             <div className='fields'>
-                                <label>Otp</label>
+                                <label>Please enter OTP</label>
                                 <Field type="otp" name="otp" className='form-control'/>
                                 <ErrorMessage name="otp" component="div" className='text-danger'/>
                             </div>

@@ -1,12 +1,12 @@
 .body
 {
-    background-color: #111927;
-    margin-top: 8px;
-    height: 3rem;
-    box-shadow: 20px 1px 15px 0px #111927;
+    background-color:rgb(52,52,52);
+    margin-top: 0px;
     background-size:cover;
-    height: 50px;
     position: relative;
+}
+.body #account{
+    color: white;
 }
 .navbar-brand
 {
@@ -14,8 +14,3 @@
     color: white;
 }
 
-.card{
-    
-    box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
-   
-}

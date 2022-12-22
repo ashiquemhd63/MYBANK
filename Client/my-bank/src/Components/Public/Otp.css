@@ -1,11 +1,12 @@
 .otp{
-    background-color: rgb(52, 52, 52);
+    background-color: rgb(236, 233, 233);
     margin-top: 125px;
    width: 400px;
     border-radius:10px ;
     margin-left: 425px;
     padding-top: 20px;
     padding-bottom: 20px;  
+    color: black;
     
 }
 .otp .form{
@@ -16,7 +17,7 @@
     margin-left:-80px ;
    }
    .otp .form-control{
-    background-color: rgb(42, 42, 42);
+    background-color: rgb(255, 255, 255);
     border: none;
    }
 .otp .btn{
