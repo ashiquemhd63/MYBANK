@@ -5,7 +5,7 @@ const sequelize = new Sequelize({
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
-    password: '2000',
+    password: 'Experion@123',
     database: 'mybank'
 });
 
@@ -265,7 +265,7 @@ module.exports.Loan = Loan;
 
 module.exports.Loantypes = LoanTypes;
 
-
+module.exports.sequelize = sequelize;
 module.exports.Bank = Bank;
 
 
