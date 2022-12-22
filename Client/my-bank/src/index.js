@@ -8,6 +8,7 @@ import Loanapprovehome from './Components/Admin/Loanapprovehome';
 import Loanapprove from './Components/Admin/LoanApprove';
 import Accountapprovehome from './Components/Admin/Accountapprovehome'
 import Accountapprove from './Components/Admin/Accountapprove';
+import Accountdetailshome from './Components/Admin/Accountdetailshome';       
 import Accountdetails from './Components/Admin/Accountdetails';
 import Loandetails from './Components/Admin/Loandetails';
 
