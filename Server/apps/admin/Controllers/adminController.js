@@ -71,15 +71,21 @@ module.exports.userApproval = (req, res) => {
 
 //display loan approval pending list
 module.exports.loanApprovalList = async (req, res) => {
-    try {
-        const loan = await Loan.findAll({
-            where: { approvalStatus: "pending" }
-        })
-        return res.json(loan);
-    }
-    catch (err) {
-        return res.json(err)
-    }
+    sequelize.query('select * from  accounts inner join loans on   accounts.accountId = loans.accountId  inner join loantypes on loans.loanTypeId = loantypes.loanTypeId inner join users on accounts.userId = users.id ;').then(data => {
+        data = data.pop()
+        res.json(data)
+    })
+    // try {
+    //     const loan = await Loan.findAll({
+    //         where: { approvalStatus: "pending" }
+    //     })
+
+        
+    //     return res.json(loan);
+    // }
+    // catch (err) {
+    //     return res.json(err)
+    // }
 }
 
 //Admin approval of loan
@@ -150,7 +156,7 @@ module.exports.allAccountDetails = (req, res) => {
 
 module.exports.allLoanDetails = (req, res) => {
     try {
-        // const loanDetails = await Loan.findAll()
+        // const loanDetails = await Loan.findAll() 
 
         sequelize.query('select * from users inner join loans on loans.userId=users.id').then(loanData => {
             loanData = loanData.pop()
