@@ -10,6 +10,7 @@ router.get('/adminProfile',admin.adminProfile);
 router.get('/loanApprovalList', admin.loanApprovalList);
 router.get('/accountApproveList', admin.userApprovalList);
 router.post('/loanApprove/:loanId', admin.loanApproval);
+router.post('/loanReject/:loanId',admin.loanReject);
 router.post('/accountApproval/:id',admin.userApproval);
 router.get('/allAccountDetails',admin.allAccountDetails);
 router.get('/allLoanDetails',admin.allLoanDetails);
