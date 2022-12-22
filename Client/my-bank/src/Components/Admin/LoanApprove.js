@@ -37,7 +37,7 @@ function Loanapprove() {
 }
 //deleting the row after admin approving the request
 function approve(loanId,e){
-    if(!confirm('Are you sure want to approve this loan?'))
+    if(!window.confirm('Are you sure want to approve this loan?'))
     {
         return;
     }
@@ -48,7 +48,7 @@ function approve(loanId,e){
 
 //deleting the row after admin rejecting the request
 function reject(loanId,e){
-    if(!confirm('Are you sure want to reject this loan?'))
+    if(!window.confirm('Are you sure want to reject this loan?'))
     {
         return;
     }
