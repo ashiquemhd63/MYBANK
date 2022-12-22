@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './Loanapprove.css';
-import { loanApprovalList,loanApprove } from "../../AdminServices/AdminServices"
+import { loanApprovalList,loanApprove,loanReject } from "../../AdminServices/AdminServices"
 import { useEffect, useState } from "react";
 
 
@@ -31,7 +31,7 @@ function Loanapprove() {
                 <td>{loan.amount}</td>
                 <td>
                         <button type="submit" className="btn btn-warning" onClick={(e) => approve(loan.loanId, e)}>Accpet</button>                                                       
-                        <button type="submit" className="btn btn-warning">Reject</button>
+                        <button type="submit" className="btn btn-warning" onClick={(e) => reject(loan.loanId, e)}>Reject</button>
                 </td>
                    
             </tr >
@@ -39,11 +39,22 @@ function Loanapprove() {
 }
 //deleting the row after admin approving the request
 function approve(loanId,e){
-    if(!confirm('Are you sure want to approve this account?'))
+    if(!confirm('Are you sure want to approve this loan?'))
     {
         return;
     }
     loanApprove(loanId,e);
+    var row = document.getElementById(loanId);
+    row.remove();
+}
+
+//deleting the row after admin rejecting the request
+function reject(loanId,e){
+    if(!confirm('Are you sure want to reject this loan?'))
+    {
+        return;
+    }
+    loanReject(loanId,e);
     var row = document.getElementById(loanId);
     row.remove();
 }
