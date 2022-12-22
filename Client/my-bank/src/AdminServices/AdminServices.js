@@ -35,5 +35,16 @@ const accountApprove = (id, e) => {
     axios.post('/admin/accountApproval/' + id)
 }
 
+//view all account details
+const allAccountDetails = async  ()=>{
+    var response = await axios.get('/admin/allAccountDeatails');
+    return response.data;
+}
 
-export { userProfile, loanApprovalList, loanApprove, accountApproveList, accountApprove };
+//view all loan details
+const allLoanDetails = async () => {
+    var response = await axios.get('/admin/allLoanDeatails');
+    return response.data;
+}
+
+export { userProfile, loanApprovalList, loanApprove, accountApproveList, accountApprove, allAccountDetails, allLoanDetails };

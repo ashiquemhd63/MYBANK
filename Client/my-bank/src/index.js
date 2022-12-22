@@ -8,6 +8,11 @@ import Loanapprovehome from './Components/Admin/Loanapprovehome';
 import Loanapprove from './Components/Admin/LoanApprove';
 import Accountapprovehome from './Components/Admin/Accountapprovehome'
 import Accountapprove from './Components/Admin/Accountapprove';
+import Accountdetails from './Components/Admin/Accountdetails';
+import Loandetails from './Components/Admin/Loandetails';
+
+
+
 
 import reportWebVitals from './reportWebVitals';
 // import Login from "./components/Login/Login";
@@ -81,9 +86,20 @@ const router = createBrowserRouter([
     element : <Accountapprovehome/>,children:[
       {path: '/admin/accountApprove',element: <Accountapprove/>}
     ]
-
-
   },
+  {
+    path: "/admin/allAccountDetails",
+    element : <Accountdetailshome/>,children:[
+      {path: '/admin/allAccountDetails',element: <Accountdetails/>}
+    ]
+  },
+  {
+    path: "/admin/allLoanDetails",
+    element : <Accountdetailshome/>,children:[
+      {path: '/admin/allLoanDetails',element: <Loandetails/>}
+    ]
+  },
+  
   {
     path: "/userDashboard",
     element: <UserHome/>, children:[{

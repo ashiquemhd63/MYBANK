@@ -52,6 +52,17 @@ function Admin() {
                             <button type="submit" className="adminBtn">Account Approval</button>
                         </Link>
                     </div>
+                    <div>
+                        <Link to="/admin/allAccountDetails">
+                            <button type="submit" className="adminBtn">Account Details</button>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to="/admin/allLoanDetails">
+                            <button type="submit" className="adminBtn">Loan Details</button>
+                        </Link>
+                    </div>
+                    
                 </div>
             </div>
         </>
