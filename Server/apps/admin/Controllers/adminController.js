@@ -1,4 +1,4 @@
-const { User, Loan, Bank, Account } = require('../../../data/models');
+const { User, Loan, Bank, Account, sequelize } = require('../../../data/models');
 const ResponseModel = require('../../../utilities/responseModel');
 
 module.exports.adminProfile = async (req, res) => {
