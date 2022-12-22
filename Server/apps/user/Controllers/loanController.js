@@ -22,7 +22,9 @@ module.exports.ApplyLoan = async (req, res) => {
         amount: req.body.amount,
         loanTypeId: req.body.loantype,
         accountId: accountHolder.accountId,
-        userId: req.user.id
+        userId: req.user.id,
+        duration : req.body.time,
+        loanTypeId : req.body.loantype
 
 
 
