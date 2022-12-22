@@ -85,7 +85,7 @@ module.exports.loanApprovalList = async (req, res) => {
 //Admin approval of loan
 module.exports.loanApproval = async (req, res) => {
     const loanId = req.params.loanId;
-    console.log("hello loan aproval")
+
     try {
 
         const loanFind = await Loan.findOne({ where: { loanId: loanId } })
@@ -106,6 +106,22 @@ module.exports.loanApproval = async (req, res) => {
         res.json(err)
     }
 
+}
+
+//admin reject loan
+module.exports.loanReject = async (req, res) => 
+{
+    const loanId = req.params.loanId;
+    try{
+        const loanFind = await Loan.update({
+            approvalStatus : "reject"
+        },{
+            where : { loanId:loanId}
+        })
+    }
+    catch(err) {
+        res.json(err)
+    }
 }
 
 
