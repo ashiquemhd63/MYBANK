@@ -4,8 +4,9 @@ import * as yup from "yup";
 import AuthService from "../../PublicServices/authService";
 import jwt_decode from "jwt-decode";
 import { Na, Navigate } from "react-router-dom";
-import "./Login.css"
-import ReCAPTCHA from 'react-google-recaptcha'
+import "./Login.css";
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 function Login() {
     const [captcha, setCaptcha] = useState(null)
@@ -13,10 +14,11 @@ function Login() {
         // console.log(val)
         setCaptcha(val)
     }
-
-
     return (
+        
         <div className='login'>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
             <div className='container-fluid'>
                 <div className='row'>
                     <div className='col-md-3 offset-sm-3'>
