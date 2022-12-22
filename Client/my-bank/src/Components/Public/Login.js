@@ -44,23 +44,31 @@ function Login() {
                                     alert(result.errors[0]);
                                     return;
                                 }
+                                if(result.success){
+                                    localStorage.setItem('userid', result.data);
+                                if(result.data){
+                                    window.location.href='/auth/otp'
+                                }
+                                
+                                }
+                               
 
                                 // alert('Login success');
-                                localStorage.setItem('token', result.data);
-                                var decoded = jwt_decode(result.data);
-                                switch (decoded.role) {
-                                    case 'admin':
-                                        window.location.href = '/admin';
-                                        // <Navigate to='/admin'/>
-                                        break;
-                                    case 'user':
-                                        window.location.href = '/userDashboard';
-                                        // <Navigate to='/admin'/>
-                                        break;
-                                    default:
-                                        window.location.href = '/';
-                                        break;
-                                }
+                                // localStorage.setItem('token', result.data);
+                                // var decoded = jwt_decode(result.data);
+                                // switch (decoded.role) {
+                                //     case 'admin':
+                                //         window.location.href = '/admin';
+                                //         // <Navigate to='/admin'/>
+                                //         break;
+                                //     case 'user':
+                                //         window.location.href = '/userDashboard';
+                                //         // <Navigate to='/admin'/>
+                                //         break;
+                                //     default:
+                                //         window.location.href = '/';
+                                //         break;
+                                // }
                             }}
                         >
                             {({ isSubmitting }) => (

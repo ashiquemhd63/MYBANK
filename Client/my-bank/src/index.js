@@ -11,6 +11,7 @@ import Accountapprove from './Components/Admin/Accountapprove';
 import Accountdetailshome from './Components/Admin/Accountdetailshome';       
 import Accountdetails from './Components/Admin/Accountdetails';
 import Loandetails from './Components/Admin/Loandetails';
+import Otp from './Components/Public/Otp';
 
 
 
@@ -47,7 +48,8 @@ const router = createBrowserRouter([
   },
   {path: "/auth", element: <AuthLayout/> ,children: [
 		{path: "/auth/login", element: <Login/>},
-    {path: "/auth/register", element: <Register/>}
+    {path: "/auth/register", element: <Register/>},
+    {path: "/auth/otp", element: <Otp/>}
 	]},
   {
     path: "/money/withdraw",
