@@ -20,9 +20,9 @@ function Register() {
                     validationSchema={yup.object({
                         email: yup.string().email('Invalid email address').required('Email is required'),
                         password: yup.string().required('Password is required'),
-                        panNumber: yup.string().required('PAN is required'),
-                        aadhaarNumber: yup.string().required('Aadhaar is required'),
-                        phone: yup.string().required('Phone is required'),
+                        panNumber: yup.string().min(10).max(10).required('PAN is required'),
+                        aadhaarNumber: yup.string().min(12).max(12).required('Aadhaar is required'),
+                        phone: yup.string().min(10).max(10).required('Phone is required'),
                         address: yup.string().required('Address is required'),
                         name: yup.string().required('Name is required')
                     })}

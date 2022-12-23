@@ -124,19 +124,33 @@ color: rgb(255, 255, 255);
     font-weight: bolder;
     
 }
-.home4{
-    background-color:rgb(223, 221, 221);
-    
-    height: 500px;
-    color: black;
 
-
-}
 .home5{
     background-color: rgb(51, 50, 50);
+  
     
     height: 500px;
-    color: black;
+    color: rgb(255, 255, 255);
 
 
 }
+.home5 .child1{
+    display: flex;
+    padding-top: 5%;
+    padding-left: 5%;
+
+}
+.home5 .child2{
+    display: flex;
+    justify-content: space-around;
+}
+.home5 .resources{
+    margin-top: 5%;
+}
+.home5 .company{
+    margin-top: 5%;
+}
+.home5 .socials{
+    margin-top: 5%;
+}
+

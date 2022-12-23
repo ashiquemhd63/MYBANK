@@ -90,8 +90,7 @@ function Home() {
 	<h1><b>Online banking</b></h1>
 	</div>
 	<div>
-	kksdjbgkjdfnhntjh
-	dflgkndfklngjhgzsfhsdhgkhdrfg
+	Our online banking services is one of the best
 	
 	</div>
 	<div>
@@ -115,11 +114,11 @@ function Home() {
   <div class="col-sm-2">
     <div class="card">
 	<div class="card-header">
-    Featured
+    Online banking
   </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Online banking</h5>
+        <p class="card-text">Our online banking services.</p>
         
       </div>
     </div>
@@ -127,11 +126,11 @@ function Home() {
   <div class="col-sm-2">
     <div class="card">
 	<div class="card-header">
-    Featured
+    Branches
   </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Branches</h5>
+        <p class="card-text">Our various branches all over</p>
     
       </div>
     </div>
@@ -139,11 +138,11 @@ function Home() {
   <div class="col-sm-2">
     <div class="card">
 	<div class="card-header">
-    Featured
+    Payment app
   </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Payment app</h5>
+        <p class="card-text">Our payment app for cashless payment</p>
     
       </div>
     </div>
@@ -151,19 +150,62 @@ function Home() {
   <div class="col-sm-2">
     <div class="card">
 	<div class="card-header">
-    Featured
+    Loan
   </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Loan</h5>
+        <p class="card-text">We provide various types of loan</p>
     
       </div>
     </div>
   </div>
 </div>
 			</div>
-			<div className="home4"></div>
-			<div className="home5"></div>
+		
+			<div className="home5">
+			<div className="child1">
+				<h1>MyBank</h1>
+				</div>
+				<div className="child2">
+				<div className="resources">
+					<div className="resources1"><h1>Recources</h1></div>
+					<div className="resources2">
+					<h6>Application</h6>
+					</div>
+					<div className="resources3">
+					<h6>Systems</h6>
+					</div>
+					<div className="resources4">
+					<h6>FAQ</h6>
+					</div>
+				</div>
+				<div className="company">
+					<div className="company1"><h1>Company</h1></div>
+					<div className="company2">
+					<h6>About us</h6>
+					</div>
+					<div className="company3">
+					<h6>Blog</h6>
+					</div>
+					<div className="company4">
+					<h6>Career</h6>
+					</div>
+				</div>
+				<div className="socials">
+				<div className="socials1"><h1>Socials</h1></div>
+					<div className="socials2">
+						<h6>Facebook</h6>
+					</div>
+					<div className="socials3">
+					<h6>Instagram</h6>
+					</div>
+					<div className="socials4">
+					<h6>Twitter</h6>
+					</div>
+				</div>
+			</div>
+			</div>
+			
         </>
 		
 	)
