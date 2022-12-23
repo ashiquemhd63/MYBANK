@@ -13,6 +13,6 @@ const {User, Account, Transaction, Loan, Bank, Loantypes} = require('./models');
 // Transaction.sync({alter:true});
 // Loantypes.sync({alter: true});
 
-Loan.sync({alter:true});
+// Loan.sync({alter:true});
 
 // Bank.sync({alter:true});
