@@ -22,10 +22,12 @@ function Loanapprove() {
     const getRow = (loan, index) => {
         return (
             <tr key={index} id={loan.loanId}>
-                <td>{loan.accountId}</td>
-                <td>{loan.loanId}</td>
-                <td>{loan.startDate}</td>
-                <td>{loan.endDate}</td>
+                <td>{loan.name}</td>
+                <td>{loan.phone}</td>
+                <td>{loan.accountNumber}</td>
+                <td>{loan.loanName}</td>
+                <td>{loan.currentBalance}</td>
+                <td>{loan.dateOpened}</td>  
                 <td>{loan.amount}</td>
                 <td>
                         <button type="submit" className="btn btn-warning" onClick={(e) => approve(loan.loanId, e)}>Accpet</button>                                                       
@@ -37,7 +39,7 @@ function Loanapprove() {
 }
 //deleting the row after admin approving the request
 function approve(loanId,e){
-    if(!confirm('Are you sure want to approve this loan?'))
+    if(!window.confirm('Are you sure want to approve this loan?'))
     {
         return;
     }
@@ -48,7 +50,7 @@ function approve(loanId,e){
 
 //deleting the row after admin rejecting the request
 function reject(loanId,e){
-    if(!confirm('Are you sure want to reject this loan?'))
+    if(!window.confirm('Are you sure want to reject this loan?'))
     {
         return;
     }
@@ -65,10 +67,12 @@ return (
                 <table className="table table-striped table-dark" style={{ "color": "white" }}>
                     <thead>
                         <tr>
-                            <th>Account Id</th>
-                            <th>Loan Id</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Account No</th>
+                            <th>Loan Type</th>
+                            <th>Account Balance</th>
+                            <th>Date of opened</th>
                             <th>Amount</th>
                             <th></th>
                         </tr>

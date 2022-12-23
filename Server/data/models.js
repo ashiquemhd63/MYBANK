@@ -1,11 +1,14 @@
-const {Sequelize, DataTypes} = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 // Create instance of sequalize
 const sequelize = new Sequelize({
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
+
     password: 'root',
+
+
     database: 'mybank'
 });
 
@@ -27,26 +30,26 @@ const User = sequelize.define('User', {
         allowNull: false,
         unique: true
     },
-    phone : {
-        type : DataTypes.BIGINT,
-        allowNull : false,
+    phone: {
+        type: DataTypes.BIGINT,
+        allowNull: false,
         unique: true
 
     },
-    address  : {
-        type : DataTypes.STRING(100),
-        allowNull : false
+    address: {
+        type: DataTypes.STRING(100),
+        allowNull: false
 
     },
-    panNumber : {
-        type : DataTypes.BIGINT,
-        allowNull : false,
-        unique:true
-    },
-    aadhaarNumber  : {
-        type : DataTypes.BIGINT,
+    panNumber: {
+        type: DataTypes.BIGINT,
         allowNull: false,
-        unique:true
+        unique: true
+    },
+    aadhaarNumber: {
+        type: DataTypes.BIGINT,
+        allowNull: false,
+        unique: true
     },
 
     password: {
@@ -59,14 +62,16 @@ const User = sequelize.define('User', {
         allowNull: false,
         defaultValue: 'user'
     },
-    approvalStatus : {
-        type : DataTypes.STRING(30),
-        defaultValue : 'pending'
+    approvalStatus: {
+        type: DataTypes.STRING(30),
+        defaultValue: 'pending'
     },
-    otp:{
-        type:DataTypes.STRING(30),
-        allowNull:true
-    }
+    otp: {
+        type: DataTypes.STRING(30),
+        allowNull: true
+    },
+
+
 });
 
 const Bank = sequelize.define('Bank', {
@@ -86,9 +91,9 @@ const Bank = sequelize.define('Bank', {
         allowNull: false,
         unique: true
     },
-    phone : {
-        type : DataTypes.BIGINT,
-        allowNull : false,
+    phone: {
+        type: DataTypes.BIGINT,
+        allowNull: false,
         unique: true
 
 
@@ -107,113 +112,127 @@ const Bank = sequelize.define('Bank', {
 });
 
 const Account = sequelize.define('Account', {
-    accountId : {
-        type : DataTypes.BIGINT,
-        autoIncrement : true,
-        primaryKey : true
+    accountId: {
+        type: DataTypes.BIGINT,
+        autoIncrement: true,
+        primaryKey: true
 
-    } ,
-    accountNumber : {
-        type : DataTypes.BIGINT,
+    },
+    accountNumber: {
+        type: DataTypes.BIGINT,
         unique: true
-        
+
     },
-    dateOpened : {
-        type : DataTypes.DATEONLY,
-        allowNull : false
+    dateOpened: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
     },
-    currentBalance : {
-        type : DataTypes.BIGINT,
-        defaultValue:0
+    currentBalance: {
+        type: DataTypes.BIGINT,
+        defaultValue: 0
     },
-    userId:{
-        type:DataTypes.INTEGER,
-        onDelete:"cascade",
-references:{
-    model:'users',
-    key:'id'
-}
+    userId: {
+        type: DataTypes.INTEGER,
+        onDelete: "cascade",
+        references: {
+            model: 'users',
+            key: 'id'
+        }
 
     }
 });
 
 const Transaction = sequelize.define('Transaction', {
-    transactionId : {
-        type : DataTypes.BIGINT,
-        autoIncrement : true,
-        primaryKey : true,
+    transactionId: {
+        type: DataTypes.BIGINT,
+        autoIncrement: true,
+        primaryKey: true,
 
-    } ,
-    accountId : {
-        type : DataTypes.BIGINT,
-        onDelete:'cascade',
-        references:{
-            model:'Accounts',
-            key:'accountId'
+    },
+    accountId: {
+        type: DataTypes.BIGINT,
+        onDelete: 'cascade',
+        references: {
+            model: 'Accounts',
+            key: 'accountId'
         }
-        
+
     },
-    dateOfTrasaction : {
-        type : DataTypes.DATEONLY,
-        allowNull : false
+    dateOfTrasaction: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
     },
-    amount : {
-        type : DataTypes.BIGINT
+    amount: {
+        type: DataTypes.BIGINT
     },
-    transactionType:{
-        type : DataTypes.STRING(50)
+    transactionType: {
+        type: DataTypes.STRING(50)
     },
-    userId:{
-        type:DataTypes.INTEGER,
-        onDelete:"cascade",
-references:{
-    model:'Users',
-    key:'id'
-}
+    userId: {
+        type: DataTypes.INTEGER,
+        onDelete: "cascade",
+        references: {
+            model: 'Users',
+            key: 'id'
+        }
 
     }
 
 });
 
 const Loan = sequelize.define('Loan', {
-    loanId : {
-        type : DataTypes.BIGINT,
-        autoIncrement : true,
-        primaryKey : true,
+    loanId: {
+        type: DataTypes.BIGINT,
+        autoIncrement: true,
+        primaryKey: true,
 
-    } ,
-    accountId : {
-        type : DataTypes.BIGINT,
-        onDelete:'cascade',
-        references:{
-            model:'Accounts',
-            key:'accountId'
+    },
+    accountId: {
+        type: DataTypes.BIGINT,
+        onDelete: 'cascade',
+        references: {
+            model: 'Accounts',
+            key: 'accountId'
         }
-        
+
     },
-    amount : {
-        type : DataTypes.BIGINT,
-        allowNull : false
+    amount: {
+        type: DataTypes.BIGINT,
+        allowNull: false
     },
-   
-    startDate:{
-        type : DataTypes.DATEONLY
+
+    startDate: {
+        type: DataTypes.DATEONLY
     },
     endDate: {
-        type : DataTypes.DATEONLY
+        type: DataTypes.DATEONLY
     },
-    userId:{
-        type:DataTypes.INTEGER,
-        onDelete:"cascade",
-references:{
-    model:'Users',
-    key:'id'
-}
+    userId: {
+        type: DataTypes.INTEGER,
+        onDelete: "cascade",
+        references: {
+            model: 'Users',
+            key: 'id'
+        }
 
     },
-    approvalStatus:{
-        type:DataTypes.STRING,
-        defaultValue:'pending'
+    approvalStatus: {
+        type: DataTypes.STRING,
+        defaultValue: 'pending'
+    },
+    duration: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    loanTypeId: {
+        type: DataTypes.INTEGER,
+        allowNull : true,
+        onDelete: "cascade",
+        references : {
+            model : 'LoanTypes',
+            key : 'loanTypeId'
+        }
+
     }
 
 });
@@ -221,41 +240,41 @@ references:{
 
 const LoanTypes = sequelize.define('loantype', {
 
-    loanTypeId : {
+    loanTypeId: {
 
-        type : DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
 
-        autoIncrement : true,
+        autoIncrement: true,
 
-        primaryKey : true
+        primaryKey: true
 
 
-
-    } ,
-
-    loanName : {
-
-        type : DataTypes.STRING(50),
-
-        unique: true
-
-       
 
     },
 
-    interest : {
+    loanName: {
 
-        type  :DataTypes.INTEGER
+        type: DataTypes.STRING(50),
+
+        unique: true
+
+
+
+    },
+
+    interest: {
+
+        type: DataTypes.INTEGER
 
     }
 
-   
-
-   
 
 
 
-   
+
+
+
+
 
 });
 

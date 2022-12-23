@@ -5,11 +5,11 @@ import "../../Components/Admin/Loanapprove.css";
 import { allAccountDetails } from "../../AdminServices/AdminServices";
 
 function Accountdetails() {
-  const [User, userProfile] = useState([]);
+  const [User, setUser] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => { 
     allAccountDetails().then((data) => {
-      userProfile(data.data);
+      setUser(data.data);
     });
   }, []);
 
