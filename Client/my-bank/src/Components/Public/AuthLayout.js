@@ -5,6 +5,7 @@ import AuthNavbar from './AuthNavbar'
 function AuthLayout() {
   return (
     <>
+    <AuthNavbar></AuthNavbar>
         
         <Outlet></Outlet>
     </>

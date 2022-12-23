@@ -1,24 +1,12 @@
 .register{
-    
-    /* margin-top: 25px;
-   width: 400px; */
-   background-image:url('https://images.pexels.com/photos/5686112/pexels-photo-5686112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-   height: 100vh;
-   background-size: cover;
+
    color: black;
    
-    /* margin-left: 0px;
-    padding-top: 50px;
-    padding-left: 450px;
-    padding-right: 813px;
-   width: 670px;
-    padding-bottom: 50px;  
-    margin-top: 0px;
-
-    margin-bottom: 520px; */
+    
 }
 
 .register .form{
+    
  margin-left: 50px;  
  color: black; 
 }
@@ -28,7 +16,7 @@
     
    }
    .register .form-control{
-    background-color: rgba(42, 42, 42, 0.399);
+    background-color: rgba(255, 255, 255, 0.399);
     border: none;
     color: rgb(0, 0, 0);
    }
@@ -43,9 +31,10 @@ margin-left: 45px;
 
 }
 .register .container-fluid{
-    background-color: rgba(255, 255, 255, 0.753);
+    margin-top: 20px;
+    background-color: rgb(236, 233, 233);
     width: 475px;
-    margin-left: 680px;
+    margin-left: 400px;
     padding-bottom: 20px;
     padding-top: 10px;
     padding-left: 0px;

@@ -11,7 +11,7 @@ function Admin() {
         userProfile().then((data) => {
             //     console.log('hello')
             // console.log(data)
-            setProfile(data);
+            setProfile(data.data);
         });
     }, []);
 

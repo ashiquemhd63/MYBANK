@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import './Adminnavbar.css'
+import AuthService from "../../PublicServices/authService";
 function Adminnavbar() {
+    function lgt(){
+        var service = new AuthService();
+        var result = service.logout();
+        
+        }
     return (
         <>
             <div className="body">
@@ -15,10 +21,10 @@ function Adminnavbar() {
                                 <li class="nav-item dropdown">
                                     <a href="/admin" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="account">Account</a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="/" class="dropdown-item">Profile</a>
+                                    <Link to='/admin/update' className="nav-link">Profile</Link>
 
                                         <div class="dropdown-divider"></div>
-                                        <a href="/" class="dropdown-item">Logout</a>
+                                        <Link onClick={lgt} className="nav-link">Logout</Link>
                                     </div>
                                 </li>
                             </ul>

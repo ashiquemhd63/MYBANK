@@ -5,17 +5,17 @@
 }
 
 .withdrawDeposit .amount{
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bolder;
     margin-top: 25px;
 }
 .withdrawDeposit .account{
-    color: white;
+    color: rgb(2, 2, 2);
     font-weight: bolder;
 }
 .withdrawDeposit .balance{
     margin-top: 25px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bolder;
 }
 .withdrawDeposit form{
@@ -24,15 +24,17 @@
     align-items: center;
     justify-content: center;
     margin-top: 200px;
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(236, 233, 233);
     width: 500px;
     border-radius: 20px;
     height: 400px;
+    color: rgb(0, 0, 0);
     
     
 }
 .withdrawDeposit .form{
     margin-right: 100px;
+    color: black;
 }
 .withdrawDeposit .container{
     /* margin-top: 200px; */
@@ -40,6 +42,7 @@
     align-items: center;
     display: flex;
     margin-top: -100px;
+    color: black;
     
 }
 .withdrawDeposit .withdrawdepositbtn{
@@ -52,12 +55,12 @@
       
 }
 .withdrawDeposit .input{
-    color: white;
+    color: rgb(0, 0, 0);
     width: 150%;
     height: 40px;
     border:none;
     border-radius: 5px;
-    background-color: rgba(46, 44, 44, 0.424);
+    background-color: rgba(255, 253, 253, 0.424);
     margin-top: 10px;
    
     

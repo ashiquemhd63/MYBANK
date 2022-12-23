@@ -6,10 +6,10 @@ module.exports.adminProfile = async (req, res) => {
     const userId = req.user.id;
     try {
         const user = await User.findByPk(userId);
-        res.json(user)
+        return res.json(new ResponseModel(user));
     }
     catch (err) {
-        res.json(err)
+        return res.json(new ResponseModel(err));
     }
 
 
@@ -132,7 +132,7 @@ module.exports.loanReject = async (req, res) =>
 
 module.exports.adminProfileUpdate = async (req, res) => {
     try {
-        Bank.update({
+        User.update({
             phone: req.body.phone,
             email: req.body.email,
             password: req.body.password

@@ -65,12 +65,15 @@ module.exports.login = async (req, res) => {
         }
     )
     if (userData == null) {
-        res.json(new ResponseModel(null, null, ['User not found']))
+        res.json(new ResponseModel(null, null, ['Wrong email or password']))
 
     }
     else if (userData.approvalStatus == 'pending') {
     
         res.json(new ResponseModel(null, null, ['Waiting for approval']))
+    }
+    else if (userData.approvalStatus == 'rejected'){
+        res.json(new ResponseModel(null, null, ['Account request rejected']))
     }
     else {
 
@@ -166,8 +169,8 @@ module.exports.register = async (req, res) => {
         // Check if user already exists.
         const userExists = await User.findOne({ where: { email: email } });
         if (userExists) {
-            return res.status(400)
-                .json(new ResponseModel(null, null, ['User already exists.']));
+            return res
+                .json(new ResponseModel(null, null, ['Account already exists.']));
         }
 
         var user = await User.create({
