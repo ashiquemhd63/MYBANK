@@ -37,6 +37,10 @@ function UserProfileEdit() {
                             alert(result.errors[0]);
                             return;
                         }
+                        if(result.success)
+                        {
+                            window.location.href='/userDashboard';
+                        }
 
                         // alert('Login success');
         
@@ -46,17 +50,17 @@ function UserProfileEdit() {
                         <Form className='form'>
                             <div className='fields'>
                                 <label>Email</label>
-                                <Field type="email" name="email" value={profile.email} className='form-control'/>
+                                <Field type="email" name="email" placeholder={profile.email} className='form-control'/>
                                 <ErrorMessage name="email" component="div" className='text-danger'/>
                             </div>
                             <div className='fields'>
                                 <label>Phone</label>
-                                <Field type="text" name="phone" value={profile.phone} className='form-control'/>
+                                <Field type="text" name="phone" placeholder={profile.phone} className='form-control'/>
                                 <ErrorMessage name="phone" component="div" className='text-danger'/>
                             </div>
                             <div className='fields'>
                                 <label>Password</label>
-                                <Field type="password" name="password" value={profile.password} className='form-control'/>
+                                <Field type="password" name="password" placeholder={profile.password} className='form-control'/>
                                 <ErrorMessage name="password" component="div" className='text-danger'/>
                             </div>
                           
