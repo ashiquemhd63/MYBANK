@@ -1,8 +1,7 @@
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import {Outlet,useNavigate} from "react-router-dom";
 import Adminnavbar from "./Adminnavbar";
-import {useEffect} from "react"
-
+import {useEffect} from "react";
 
 function Adminhome()
 {

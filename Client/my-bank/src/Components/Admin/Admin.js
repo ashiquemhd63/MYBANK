@@ -6,26 +6,13 @@ import { userProfile } from '../../AdminServices/AdminServices';
 function Admin() {
 
     const [User, setProfile] = useState([]);
-    // console.log("hello")
+    
     useEffect(() => {
         userProfile().then((data) => {
-            //     console.log('hello')
-            // console.log(data)
+           
             setProfile(data.data);
         });
     }, []);
-
-    // const getRow = (user, index) => {
-    //     return (
-    //         <tr key={index}>
-    //             <td>{user.firstName}</td>
-    //             <td>{user.lastName}</td>
-    //             <td>{user.email}</td>
-    //             <td>{user.phone}</td>
-    //         </tr>
-    //     )
-    // }
-
 
     return (
         <>

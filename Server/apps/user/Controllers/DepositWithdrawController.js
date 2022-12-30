@@ -1,4 +1,4 @@
-const { User, Account, Transaction, Loan } = require('../../../data/models');
+const { Account, Transaction} = require('../../../data/models');
 const ResponseModel = require('../../../utilities/responseModel');
 
 //Get specific transaction details
@@ -49,7 +49,7 @@ module.exports.deposit_funds = async (req, res) => {
 
 
 module.exports.withdrawal_funds = async (req, res) => {
-    const userId = req.user.id;//should take it from token as req.user.id
+    const userId = req.user.id; //should take it from token as req.user.id
 
     const accountData = await Account.findOne({
         where: { userId: userId }

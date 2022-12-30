@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import "../../Components/Admin/Loanapprove.css";
-
 import { allAccountDetails } from "../../AdminServices/AdminServices";
 
 function Accountdetails() {
