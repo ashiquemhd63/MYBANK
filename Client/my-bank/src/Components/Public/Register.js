@@ -38,23 +38,6 @@ function Register() {
                         else{
                             window.location.href = '/auth/login';
                         }
-
-                        // alert('Login success');
-                        // localStorage.setItem('token', result.data);
-                        // var decoded = jwt_decode(result.data);
-                        // switch(decoded.role){
-                        //     case 'bank':
-                        //         window.location.href = '/admin';
-                        //         // <Navigate to='/admin'/>
-                        //         break;
-                        //     case 'user':
-                        //         window.location.href = '/userDashboard';
-                        //         // <Navigate to='/admin'/>
-                        //         break;
-                        //     default:
-                        //         window.location.href = '/';
-                        //         break;
-                        // }
                     }}
                     >
                     {({ isSubmitting }) => (

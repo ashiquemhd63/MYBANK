@@ -18,18 +18,6 @@ module.exports.userProfile = async (req, res) => {
            
         });
 
-
-
-//     const userId = req.user.id
-//     try {
-//         const user = await User.findByPk(userId);
-//         res.json(new ResponseModel(user));
-//     }
-//     catch (err) {
-//         res.json(new ResponseModel(err));
-//     }
-
-// }
 }
 
 

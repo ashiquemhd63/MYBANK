@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
-
 import '../../Components/Admin/Loanapprove.css'
-
-
-
-import {allLoanDetails} from "../../AdminServices/AdminServices";
-
-
-
+import { allLoanDetails } from "../../AdminServices/AdminServices";
 
 function Loandetails() {
 
@@ -22,8 +15,6 @@ function Loandetails() {
         })
 
     }, []);
-
-
 
     const getRow = (user, index) => {
 
@@ -48,105 +39,78 @@ function Loandetails() {
                 <td>{user.approvalStatus} </td>
 
             </tr>
-
         )
-
-
-
     }
 
     const [searchTerm, setsearchTerm] = useState("");
 
     return (
-
-
-
         <>
+            <div className="container">
 
-        <div className="container">
+                <div className="search">
 
-            <div className="search">
+                    <input type="text" placeholder="Search By Approval Status.." className="form-control " style={{ marginTop: 50, marginBottom: 20, width: "40%" }} onChange={(e) => {
 
-                <input type="text" placeholder="Search By Approval Status.." className="form-control " style={{marginTop: 50, marginBottom: 20, width: "40%"}} onChange={(e)=>
+                        setsearchTerm(e.target.value);
 
-                {
+                    }} />
 
-                    setsearchTerm(e.target.value);
+                </div>
 
-                }}/>
+                <div className="table-container">
 
+                    <table className="table table-striped table-dark">
+
+                        <thead>
+
+                            <tr>
+
+                                {/* <th>Account Id</th> */}
+
+                                <th> Name</th>
+
+                                <th> Email</th>
+
+                                <th> Phone</th>
+
+                                <th> Loan Amount</th>
+
+                                <th> Start Date</th>
+
+                                <th> End Date</th>
+
+                                {/* <th>User Id</th> */}
+
+                                <th>ApprovalStatus</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            {User.filter(val => {
+
+                                if (searchTerm === "") {
+
+                                    return val;
+
+                                }
+
+                                else if (val.approvalStatus.toString().includes(searchTerm.toString())
+
+                                ) {
+                                    return val
+                                }
+                            })
+                                .map(getRow)}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-            <div className="table-container">
-
-                <table className="table table-striped table-dark">
-
-                    <thead>
-
-                        <tr>
-
-                            {/* <th>Account Id</th> */}
-
-                            <th> Name</th>
-
-                            <th> Email</th>
-
-                            <th> Phone</th>
-
-                            <th> Loan Amount</th>
-
-                            <th> Start Date</th>
-
-                            <th> End Date</th>
-
-                            {/* <th>User Id</th> */}
-
-                            <th>ApprovalStatus</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        {User.filter(val => {
-
-                            if(searchTerm === "")
-
-                            {
-
-                                return val;
-
-                            }
-
-                            else if (val.approvalStatus.toString().includes(searchTerm.toString())
-
-                            )
-
-                            {
-
-                                return val
-
-                            }
-
-                        })
-
-                        .map(getRow)}
-
-                    </tbody>
-
-
-
-                </table>
-
-            </div>
-
-        </div>
-
         </>
-
     )
-
 }
 
 export default Loandetails;

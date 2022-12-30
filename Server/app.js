@@ -1,12 +1,8 @@
 const express = require('express');
-
- 
-
 const bodyParser = require('body-parser');
 const publicRoutes = require('./apps/public/routes');
 const userRoutes = require('./apps/user/routes');
 const adminRoutes = require('./apps/admin/routes');
-// app.use('/user',TransactionRoutes);
 
 const dotEnv = require('dotenv');
 

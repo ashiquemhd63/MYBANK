@@ -245,8 +245,6 @@ const LoanTypes = sequelize.define('loantype', {
 
         primaryKey: true
 
-
-
     },
 
     loanName: {
@@ -255,8 +253,6 @@ const LoanTypes = sequelize.define('loantype', {
 
         unique: true
 
-
-
     },
 
     interest: {
@@ -264,15 +260,6 @@ const LoanTypes = sequelize.define('loantype', {
         type: DataTypes.INTEGER
 
     }
-
-
-
-
-
-
-
-
-
 });
 
 
@@ -280,9 +267,7 @@ module.exports.User = User;
 module.exports.Account = Account;
 module.exports.Transaction = Transaction;
 module.exports.Loan = Loan;
-
 module.exports.Loantypes = LoanTypes;
-
 module.exports.sequelize = sequelize;
 module.exports.Bank = Bank;
 
